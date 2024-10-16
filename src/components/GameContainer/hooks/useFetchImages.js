@@ -24,7 +24,7 @@ export default function useFetchImages(apiUrl, params) {
       try {
         const response = await fetch(requestUrl);
         if (!response.ok) {
-          throw new Error("Request failed with status code: ", +response.status);
+          throw new Error("Fetch request failed with status code: " + response.status);
         }
         const result = await response.json();
         setData(result);
