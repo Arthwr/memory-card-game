@@ -6,6 +6,7 @@ export default function useFetchImages(apiUrl, params) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let isMounted = true;
     const queryParams = new URLSearchParams();
 
     for (const key in params) {
@@ -27,15 +28,25 @@ export default function useFetchImages(apiUrl, params) {
           throw new Error("Fetch request failed with status code: " + response.status);
         }
         const result = await response.json();
-        setData(result);
+        if (isMounted) {
+          setData(result);
+        }
       } catch (error) {
-        setError(error.message);
+        if (isMounted) {
+          setError(error.message);
+        }
       } finally {
-        setLoading(false);
+        if (isMounted) {
+          setLoading(false);
+        }
       }
     };
 
     fetchData();
+
+    return () => {
+      isMounted = false;
+    };
   }, [apiUrl, params]);
 
   return { data, error, loading };
