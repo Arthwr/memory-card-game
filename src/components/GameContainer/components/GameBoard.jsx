@@ -13,7 +13,7 @@ export default function GameBoard({ imageData }) {
   };
 
   return (
-    <div className="flex flex-col items-center gap-16 px-6">
+    <div className="flex flex-col items-center gap-16 px-6 pb-10">
       <Scoreboard currentScore={score} bestScore={bestScore} />
       <div className="flex flex-wrap gap-16 justify-center max-w-[80%]">
         {imageOrder.map(({ image_id, url }) => (
