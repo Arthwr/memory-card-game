@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 #root {
-  @apply h-screen;
+  @apply h-full;
 }

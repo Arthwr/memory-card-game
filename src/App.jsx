@@ -3,7 +3,7 @@ import GameContainer from "./components/GameContainer/GameContainer.jsx";
 
 function App() {
   return (
-    <div className="bg-svg w-screen h-full">
+    <div className="bg-svg w-full min-h-screen">
       <Header />
       <GameContainer />
     </div>
