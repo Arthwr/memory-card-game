@@ -8,4 +8,4 @@ Built with React & Tailwind CSS.
 
 
 ### Preview:
-![Uploading arthwr.github.io_memory-card-game_.png…]()
+![arthwr github io_memory-card-game_](https://github.com/user-attachments/assets/2b497be0-6634-4fdd-a450-805ae976ed60)
