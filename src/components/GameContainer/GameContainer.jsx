@@ -1,4 +1,5 @@
 import useFetchImages from "./hooks/useFetchImages.js";
+import svgLoader from "../../assets/svgLoader.svg";
 import GameBoard from "./components/GameBoard.jsx";
 
 const API_URL = "https://api.waifu.im/search";
@@ -17,8 +18,13 @@ export default function GameContainer() {
 
   return (
     <>
-      {loading && <div>Loading...</div>}
-      {error && <div>Error: {error}</div>}
+      {loading && (
+        <div className="flex justify-center gap-2 items-center mt-10">
+          <span>Loading</span>
+          <img width={32} height={32} src={svgLoader} alt="" />
+        </div>
+      )}
+      {error && <div className="text-center mt-10">Error: {error}</div>}
       {data && <GameBoard imageData={data.images} />}
     </>
   );
